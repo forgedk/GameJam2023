@@ -48,26 +48,36 @@ public class CardSelection : MonoBehaviour, IDragHandler , IBeginDragHandler, IE
         
     }
 
-    public void SetCard(Card cardInSystem) 
+    public void SetCard(Card cardInSystem, Player player) 
     {
         cardRepresentation = cardInSystem;
         setImage(cardInSystem.image);
-        SetDamageArrows();
+        SetDamageArrows(player);
     }
 
-    public void SetDamageArrows() 
+    public void SetDamageArrows(Player player) 
     {
-        SetDamageArrow(cardRepresentation.damageUp, arrowUp);
-        SetDamageArrow(cardRepresentation.damageLeft, arrowLeft);
-        SetDamageArrow(cardRepresentation.damageRight, arrowRight);
+        if (player.orientation == Orientation.Up) {
+            SetDamageArrow(cardRepresentation.damageUp, arrowUp, player.playerColor);
+            SetDamageArrow(0, arrowDown, player.playerColor);
+                }
+        else
+        {
+            SetDamageArrow(cardRepresentation.damageUp, arrowDown, player.playerColor);
+            SetDamageArrow(0, arrowUp, player.playerColor);
+
+        }
+        SetDamageArrow(cardRepresentation.damageLeft, arrowLeft, player.playerColor);
+        SetDamageArrow(cardRepresentation.damageRight, arrowRight, player.playerColor);
     }
 
-    public void SetDamageArrow(int damage, Arrow arrow)
+    public void SetDamageArrow(int damage, Arrow arrow, Color color)
     {
         if(damage > 0)
         {
             arrow.SetActive(true);
             arrow.setText((damage).ToString());
+            arrow.setColor(color);
         }
         else
         {

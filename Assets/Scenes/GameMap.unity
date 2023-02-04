@@ -199,6 +199,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62692762}
   m_CullTransparentMesh: 1
+--- !u!1001 &109133198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 473544213}
+    m_Modifications:
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194729, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_Name
+      value: Card Emerald Golem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: text
+      value: "El jovial golem de esmeralda es reconocido por sus habilidades de sanaci\xF3n,
+        utilizando a su favor las propiedades de la esmeralda, ayuda a mantener el
+        equilibrio natural de su entorno y favorecer en batalla a los indios muzos."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ed43d88b3577c648a9c83b41d7fd18a, type: 3}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: title
+      value: Golem de Esmeralda
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: damageUp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: damageRight
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+--- !u!4 &109133199 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+  m_PrefabInstance: {fileID: 109133198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120494296
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,8 +756,42 @@ Transform:
   m_Children:
   - {fileID: 712211731}
   - {fileID: 1584796217}
+  - {fileID: 109133199}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &665119830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 665119831}
+  m_Layer: 0
+  m_Name: Players
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &665119831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665119830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.674425, y: -2.404261, z: -10.036646}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2050128239}
+  - {fileID: 1774420587}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &712211731 stripped
 Transform:
@@ -873,6 +991,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardController: {fileID: 120494298}
   drawController: {fileID: 1350691299}
+  player1: {fileID: 1774420588}
+  player2: {fileID: 2050128240}
 --- !u!4 &831849567
 Transform:
   m_ObjectHideFlags: 0
@@ -1170,6 +1290,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1774420586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1774420587}
+  - component: {fileID: 1774420588}
+  m_Layer: 0
+  m_Name: Player2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1774420587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774420586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 665119831}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1774420588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774420586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd7852f7101dea45a71c3c12eb4fc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoints: 20
+  playerColor: {r: 0.04150939, g: 0.27724832, b: 1, a: 1}
+  orientation: 1
 --- !u!1 &1845314528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1632,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2050128238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2050128239}
+  - component: {fileID: 2050128240}
+  m_Layer: 0
+  m_Name: Player1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2050128239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050128238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 665119831}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050128240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050128238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd7852f7101dea45a71c3c12eb4fc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoints: 20
+  playerColor: {r: 0.7924528, g: 0.12260585, b: 0.12260585, a: 1}
+  orientation: 0
 --- !u!1 &2054567344
 GameObject:
   m_ObjectHideFlags: 0
