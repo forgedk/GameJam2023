@@ -263,7 +263,7 @@ PrefabInstance:
     - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
       propertyPath: image
       value: 
-      objectReference: {fileID: 21300000, guid: 4ed43d88b3577c648a9c83b41d7fd18a, type: 3}
+      objectReference: {fileID: 21300000, guid: ff34f7625cc9686499773cf9343aa527, type: 3}
     - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
       propertyPath: title
       value: Golem de Esmeralda
@@ -760,6 +760,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484307600 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+  m_PrefabInstance: {fileID: 109133198}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60bd3dd9f50fcc4e8db5754db25673b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &665119830
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,8 +1002,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boardController: {fileID: 120494298}
   drawController: {fileID: 1350691299}
-  player1: {fileID: 1774420588}
-  player2: {fileID: 2050128240}
+  player1: {fileID: 2050128240}
+  player2: {fileID: 1774420588}
 --- !u!4 &831849567
 Transform:
   m_ObjectHideFlags: 0
@@ -1104,11 +1115,11 @@ MonoBehaviour:
   cardList:
   - {fileID: 1584796218}
   - {fileID: 712211732}
-  - {fileID: 712211732}
+  - {fileID: 484307600}
   - {fileID: 712211732}
   - {fileID: 1584796218}
   - {fileID: 712211732}
-  - {fileID: 712211732}
+  - {fileID: 484307600}
   - {fileID: 1584796218}
   cardSelectList:
   - {fileID: 794018908}
