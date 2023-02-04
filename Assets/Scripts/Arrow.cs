@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class DrawPanel : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
-    public Card[] cardList;
-    public CardSelection[] cardSelectList;  
+    public TMP_Text damageText;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -18,18 +17,13 @@ public class DrawPanel : MonoBehaviour
         
     }
 
-    public void SetCards()
-    {
-        foreach (CardSelection cardToSelect in cardSelectList)
-        {
-            cardToSelect.SetCard(cardList[0]);
-
-        }
-    }
-
     public void SetActive(bool active)
     {
         gameObject.SetActive(active);
     }
 
+    public void setText(string text)
+    {
+        damageText.text = text;
+    }
 }

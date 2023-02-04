@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         boardController.CreateCardSlots(4,4, 0.5f, 0.5f);
+        drawController.SetActive(true);
         drawController.SetCards();
     }
 

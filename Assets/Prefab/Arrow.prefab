@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1225855587456062990}
   - component: {fileID: 444826532638031212}
   - component: {fileID: 4010306391661583517}
+  - component: {fileID: 2003765432944249162}
   m_Layer: 5
   m_Name: Arrow
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2003765432944249162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796829552364254835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8413b6d5b18d6d4280402d8fa35a156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageText: {fileID: 194457405526677980}
 --- !u!1 &5667272803469881359
 GameObject:
   m_ObjectHideFlags: 0

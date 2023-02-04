@@ -355,6 +355,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2054567348}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ModifyInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InfoPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
 --- !u!224 &125861878 stripped
@@ -456,6 +476,26 @@ PrefabInstance:
     - target: {fileID: 3419678062284277313, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2054567348}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ModifyInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InfoPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
@@ -864,7 +904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1350691296
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1332,6 +1372,7 @@ GameObject:
   - component: {fileID: 2054567345}
   - component: {fileID: 2054567347}
   - component: {fileID: 2054567346}
+  - component: {fileID: 2054567348}
   m_Layer: 5
   m_Name: InfoPanel
   m_TagString: Untagged
@@ -1400,6 +1441,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054567344}
   m_CullTransparentMesh: 1
+--- !u!114 &2054567348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054567344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0f3ba1d5249d2429c408504bc7e648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCard: {fileID: 62692764}
+  description: {fileID: 420169687}
+  title: {fileID: 815106898}
 --- !u!1001 &2139339698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1495,6 +1551,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2054567348}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ModifyInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InfoPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
 --- !u!224 &2139339699 stripped
@@ -1569,9 +1645,21 @@ PrefabInstance:
       value: Card
       objectReference: {fileID: 0}
     - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: text
+      value: Mr Crabs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
       propertyPath: image
       value: 
       objectReference: {fileID: 21300000, guid: 881cf81656584cd4099c3c846d726cfa, type: 3}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: damageUp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: damageRight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
 --- !u!1001 &3419678062943748632
@@ -1668,6 +1756,34 @@ PrefabInstance:
     - target: {fileID: 3419678062284277313, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2054567348}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ModifyInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InfoPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197144393846854646, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
+      propertyPath: ChangePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637238915c20c2347bd4ef5b7acac87c, type: 3}
