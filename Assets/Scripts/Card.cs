@@ -6,8 +6,10 @@ using UnityEngine.UIElements;
 public class Card : MonoBehaviour
 {
     public AudioClip SelectAudioClip, PlayAudioClip;
-    public Texture image;
+    public Sprite image;
     public int damageLeft, damageRight, damageUp;
+    public string title;
+    public string text;
 
     // Start is called before the first frame update
     void Start()
