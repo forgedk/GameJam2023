@@ -22,7 +22,7 @@ public class DrawPanel : MonoBehaviour
     {
         foreach (CardSelection cardToSelect in cardSelectList)
         {
-            cardToSelect.SetCard(cardList[0]);
+            cardToSelect.SetCard(cardList[Random.Range(0, cardList.Length)]);
 
         }
     }
