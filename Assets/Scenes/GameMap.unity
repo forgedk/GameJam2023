@@ -154,7 +154,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2054567345}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -230,7 +230,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1962376100}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSlotTemplate: {fileID: 4046490218778492823, guid: 7f77cb4a1d96d434d9c3de95e1893075, type: 3}
   CardList:
+  - {fileID: 4046490218778492823, guid: 7f77cb4a1d96d434d9c3de95e1893075, type: 3}
   - {fileID: 4046490218778492823, guid: 7f77cb4a1d96d434d9c3de95e1893075, type: 3}
 --- !u!222 &120494300
 CanvasRenderer:
@@ -535,7 +536,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2054567345}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -665,13 +666,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473544211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -222.69739, y: 139.9267, z: 0.3462622}
+  m_LocalPosition: {x: 737.3026, y: 679.9267, z: 0.3462622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 712211731}
-  m_Father: {fileID: 1962376100}
-  m_RootOrder: 0
+  - {fileID: 1584796217}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &712211731 stripped
 Transform:
@@ -736,7 +738,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2054567345}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -922,7 +924,7 @@ RectTransform:
   - {fileID: 381005236}
   - {fileID: 2139339699}
   m_Father: {fileID: 1962376100}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -980,6 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardList:
+  - {fileID: 1584796218}
   - {fileID: 712211732}
   cardSelectList:
   - {fileID: 794018908}
@@ -995,6 +998,102 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ef9dac4682373345b823f8b5fc606a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &1584796216
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 473544213}
+    m_Modifications:
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194729, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: m_Name
+      value: Card Gold Golem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: text
+      value: "Este gigante f\xE9rreo de consistencia rocosa, se ve impulsado por
+        un resistente n\xFAcleo de oro y la vitalidad que le otorga el \xE1rbol de
+        la vida. Ejerciendo una fuerza descomunal sobre sus adversarios, defiende
+        el patrimonio de los pueblos ancestrales muiscas y taironas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ed43d88b3577c648a9c83b41d7fd18a, type: 3}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: title
+      value: Golem de oro
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: damageUp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+      propertyPath: damageRight
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+--- !u!4 &1584796217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1485766989585194728, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+  m_PrefabInstance: {fileID: 1584796216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584796218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1485766989585194735, guid: 37079e3ff2980464abf0a955bf6cab9c, type: 3}
+  m_PrefabInstance: {fileID: 1584796216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60bd3dd9f50fcc4e8db5754db25673b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1751247851
@@ -1349,7 +1448,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 473544213}
   - {fileID: 120494297}
   - {fileID: 1350691296}
   - {fileID: 2054567345}
@@ -1392,11 +1490,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 62692763}
   - {fileID: 420169686}
   - {fileID: 815106897}
+  - {fileID: 62692763}
   m_Father: {fileID: 1962376100}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

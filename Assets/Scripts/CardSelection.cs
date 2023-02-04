@@ -30,11 +30,14 @@ public class CardSelection : MonoBehaviour, IDragHandler , IBeginDragHandler, IE
 
     public void OnDrag(PointerEventData eventData) {
         transform.position = eventData.position;
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         ChangePanel.Invoke(cardRepresentation);
+        imageCard.raycastTarget = false;
+
 
 
     }
@@ -81,7 +84,7 @@ public class CardSelection : MonoBehaviour, IDragHandler , IBeginDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
-
+        imageCard.raycastTarget = true;
         gameObject.transform.position = initialPosition;
     }
     
