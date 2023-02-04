@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CardSlot : MonoBehaviour
 {
+    public Card cardInSlot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +17,5 @@ public class CardSlot : MonoBehaviour
     {
         
     }
+
 }

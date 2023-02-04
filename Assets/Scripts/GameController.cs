@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-
+    public BoardController boardController;
     // Start is called before the first frame update
     void Start()
     {
-        DeclareWin();
+        boardController.CreateCardSlots(4,4, 0.5f, 0.5f);
     }
 
     // Update is called once per frame
@@ -21,5 +21,7 @@ public class GameController : MonoBehaviour
         print("Jugador 1 Gano");
     
     }
+
+
 
 }

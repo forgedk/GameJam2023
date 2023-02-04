@@ -11,7 +11,6 @@ public class BoardController : MonoBehaviour
     void Start()
     {
 // Create a 4X4 Board
-        CreateCardSlots(4, 4, 0.5f ,0.5f);
     }
 
     // Update is called once per frame
@@ -23,14 +22,9 @@ public class BoardController : MonoBehaviour
     public void CreateCardSlots(int XLength,int YLength,float xOffSet,float yOffSet) {
         CardsSlot = new GameObject[XLength,YLength];
 
-        float LengthMin = this.gameObject.GetComponent<RectTransform>().rect.xMin;
-        float LengthMax = this.gameObject.GetComponent<RectTransform>().rect.xMax;
 
-        float HeightMin = this.gameObject.GetComponent<RectTransform>().rect.yMin;
-        float HeightMax = this.gameObject.GetComponent<RectTransform>().rect.yMax;
-
-        float intervalLenght = (LengthMax - LengthMin) / XLength;
-        float intervalHeight = (HeightMax - HeightMin) / YLength;
+        float intervalLenght = this.gameObject.GetComponent<RectTransform>().rect.width / XLength;
+        float intervalHeight = this.gameObject.GetComponent<RectTransform>().rect.height / YLength;
 
 
         for (int i = 0; i < XLength; i++) {
@@ -38,12 +32,11 @@ public class BoardController : MonoBehaviour
 
                 CardsSlot[i,j] = Instantiate(cardSlotTemplate);
                 CardsSlot[i, j].GetComponent<RectTransform>().SetParent(this.gameObject.transform);
-                CardsSlot[i, j].transform.position = new Vector3(intervalLenght*(i+ xOffSet) , intervalHeight*(j+ yOffSet), 0);
+                CardsSlot[i, j].transform.localPosition = new Vector3((intervalLenght*(i+ xOffSet)) , intervalHeight*(j+ yOffSet), 0);
+
 
             }
         
         }
-
-
     }
 }
