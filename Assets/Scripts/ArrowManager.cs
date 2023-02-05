@@ -17,21 +17,21 @@ public class ArrowManager : MonoBehaviour
         
     }
 
-    public void SetDamageArrows(Card cardRepresentation,int addedPower, Player player)
+    public void SetDamageArrows(Card cardRepresentation,int level,int addedPower, Player player)
     {
         if (player.orientation == Orientation.Up)
         {
-            SetDamageArrow(cardRepresentation.damageUp, addedPower,arrowUp, player.playerColor);
+            SetDamageArrow(cardRepresentation.damageUp* level, addedPower,arrowUp, player.playerColor);
             SetDamageArrow(0, addedPower,arrowDown, player.playerColor);
         }
         else
         {
-            SetDamageArrow(cardRepresentation.damageUp, addedPower,arrowDown, player.playerColor);
+            SetDamageArrow(cardRepresentation.damageUp* level, addedPower,arrowDown, player.playerColor);
             SetDamageArrow(0, addedPower, arrowUp , player.playerColor);
 
         }
-        SetDamageArrow(cardRepresentation.damageLeft, addedPower, arrowLeft, player.playerColor);
-        SetDamageArrow(cardRepresentation.damageRight,addedPower, arrowRight, player.playerColor);
+        SetDamageArrow(cardRepresentation.damageLeft* level, addedPower, arrowLeft, player.playerColor);
+        SetDamageArrow(cardRepresentation.damageRight* level, addedPower, arrowRight, player.playerColor);
     }
 
     public void SetDamageArrow(int damage,int power, Arrow arrow, Color color)

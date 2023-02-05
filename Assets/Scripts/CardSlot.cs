@@ -42,7 +42,7 @@ public class CardSlot : MonoBehaviour, IDropHandler
     public void SetCardInBoard()
     {
         imageCard.sprite = cardInSlot.image;
-        arrowManager.SetDamageArrows(cardInSlot, AttackPower, player); ;
+        arrowManager.SetDamageArrows(cardInSlot,level, AttackPower, player); ;
 
     }
 
@@ -52,6 +52,14 @@ public class CardSlot : MonoBehaviour, IDropHandler
         Card posibleCard = eventData.pointerDrag.GetComponent<CardSelection>().cardRepresentation;
         if (boardController.CheckValidMove(row,col, posibleCard,searchPlayer)) 
         { 
+            if(cardInSlot == posibleCard)
+            {
+                level= level + 1; ;
+            }
+            else
+            {
+                level = 1;
+            }
             cardInSlot = posibleCard;
             player = searchPlayer;
             SetCardInBoard();
