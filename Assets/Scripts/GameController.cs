@@ -66,7 +66,8 @@ public class GameController : MonoBehaviour
                 Vector2Int vectorToInclude = relations.Pop();
                 CardSlot cardPrincipal = boardController.CardsSlot[initialVector.x, initialVector.y].transform.GetComponent<CardSlot>();
 
-                boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().AddToPower(cardPrincipal.cardInSlot.damageUp +cardPrincipal.GetPower(col,row), initialVector.x, initialVector.y);
+                int powerToSend = CalculatePower(cardPrincipal.cardInSlot, initialVector, vectorToInclude);
+                boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().AddToPower(powerToSend + cardPrincipal.GetPower(col,row), initialVector.x, initialVector.y);
 
                 boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().AttackPower = boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().GetPower(col, row);
 
@@ -76,10 +77,29 @@ public class GameController : MonoBehaviour
 
             }
         }
+      }
+
+    public int CalculatePower( Card card, Vector2Int inital, Vector2Int include)
+    {
+        if (inital.x > include.x) 
+        {
+            return card.damageLeft;
+
+
+        }
+        if (inital.x < include.x)
+        {
+
+            return card.damageRight;
+
+        }
+
+        return card.damageUp;
 
 
 
-            }
+
+    }
 
 
 

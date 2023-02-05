@@ -44,9 +44,6 @@ public class CardSlot : MonoBehaviour, IDropHandler
         imageCard.sprite = cardInSlot.image;
         arrowManager.SetDamageArrows(cardInSlot, AttackPower, player); ;
 
-
-
-
     }
 
     public void OnDrop(PointerEventData eventData) 
