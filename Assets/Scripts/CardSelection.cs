@@ -50,7 +50,7 @@ public class CardSelection : MonoBehaviour, IDragHandler , IBeginDragHandler, IE
         cardRepresentation = cardInSystem;
         setImage(cardInSystem.image);
         ownPlayer = player;
-        arrowManager.SetDamageArrows(cardRepresentation,0, player);
+        arrowManager.SetDamageArrows(cardRepresentation,1,0, player);
     }
 
 
