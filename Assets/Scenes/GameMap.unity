@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564a4d0504ac79c46ba4d1a35f9a08f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 831849566}
   cardSlotTemplate: {fileID: 4046490218778492823, guid: 7f77cb4a1d96d434d9c3de95e1893075, type: 3}
   numberRow: 0
   numberCol: 0
@@ -999,6 +1000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77402b0c6a34dda47abe8850d52753fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  row: 4
+  col: 4
   boardController: {fileID: 120494298}
   drawController: {fileID: 1350691299}
   player1: {fileID: 2050128240}

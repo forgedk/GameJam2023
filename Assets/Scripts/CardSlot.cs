@@ -1,7 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
+
+[Serializable]
+public class EndTurn : UnityEvent<Player> { }
 
 public class CardSlot : MonoBehaviour, IDropHandler
 {
@@ -17,6 +22,7 @@ public class CardSlot : MonoBehaviour, IDropHandler
     public int row;
     public int col;
 
+    public EndTurn endTurn;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +55,14 @@ public class CardSlot : MonoBehaviour, IDropHandler
             cardInSlot = posibleCard;
             player = searchPlayer;
             SetCardInBoard();
+            endTurn.Invoke(player);
+
         }
+    }
+
+
+    public void AddToPower(ref int power) {
+        AttackPower += power;
     }
 
 }

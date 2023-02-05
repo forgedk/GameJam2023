@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using System;
-using UnityEngine;
 
 [Serializable]
 public class ChangeCard : UnityEvent<Card> { }
