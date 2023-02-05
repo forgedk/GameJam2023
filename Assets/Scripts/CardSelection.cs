@@ -16,8 +16,9 @@ public class CardSelection : MonoBehaviour, IDragHandler , IBeginDragHandler, IE
 
     private Vector3 initialPosition;
     private UnityEngine.UI.Image imageCard;
-    public Arrow arrowUp, arrowDown, arrowLeft, arrowRight;
     public Card cardRepresentation;
+    public ArrowManager arrowManager;
+    public Player ownPlayer;
 
 
     // Start is called before the first frame update
@@ -52,39 +53,10 @@ public class CardSelection : MonoBehaviour, IDragHandler , IBeginDragHandler, IE
     {
         cardRepresentation = cardInSystem;
         setImage(cardInSystem.image);
-        SetDamageArrows(player);
+        ownPlayer = player;
+        arrowManager.SetDamageArrows(cardRepresentation, player);
     }
 
-    public void SetDamageArrows(Player player) 
-    {
-        if (player.orientation == Orientation.Up) {
-            SetDamageArrow(cardRepresentation.damageUp, arrowUp, player.playerColor);
-            SetDamageArrow(0, arrowDown, player.playerColor);
-                }
-        else
-        {
-            SetDamageArrow(cardRepresentation.damageUp, arrowDown, player.playerColor);
-            SetDamageArrow(0, arrowUp, player.playerColor);
-
-        }
-        SetDamageArrow(cardRepresentation.damageLeft, arrowLeft, player.playerColor);
-        SetDamageArrow(cardRepresentation.damageRight, arrowRight, player.playerColor);
-    }
-
-    public void SetDamageArrow(int damage, Arrow arrow, Color color)
-    {
-        if(damage > 0)
-        {
-            arrow.SetActive(true);
-            arrow.setText((damage).ToString());
-            arrow.setColor(color);
-        }
-        else
-        {
-            arrow.SetActive(false);
-        }
-
-    }
 
     public void setImage(Sprite texture)
     {

@@ -334,9 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSlotTemplate: {fileID: 4046490218778492823, guid: 7f77cb4a1d96d434d9c3de95e1893075, type: 3}
-  CardList:
-  - {fileID: 4046490218778492823, guid: 7f77cb4a1d96d434d9c3de95e1893075, type: 3}
-  - {fileID: 4046490218778492823, guid: 7f77cb4a1d96d434d9c3de95e1893075, type: 3}
+  numberRow: 0
+  numberCol: 0
 --- !u!222 &120494300
 CanvasRenderer:
   m_ObjectHideFlags: 0

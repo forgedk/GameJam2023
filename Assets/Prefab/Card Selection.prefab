@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3419678062284277315}
   - component: {fileID: 3419678062284277314}
   - component: {fileID: 9197144393846854646}
+  - component: {fileID: 328017306871676729}
   m_Layer: 5
   m_Name: Card Selection
   m_TagString: Untagged
@@ -108,6 +109,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  cardRepresentation: {fileID: 0}
+  arrowManager: {fileID: 328017306871676729}
+--- !u!114 &328017306871676729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419678062284277312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f8f68011feecb48872392333275f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   arrowUp: {fileID: 3062437274670136784}
   arrowDown: {fileID: 6405255065510337478}
   arrowLeft: {fileID: 2785007191787920441}
