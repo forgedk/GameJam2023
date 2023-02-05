@@ -17,7 +17,7 @@ public class CardSlot : MonoBehaviour, IDropHandler
     public Player player;
     public UnityEngine.UI.Image imageCard;
 
-    public int AttackPower;
+    public int AttackPower =0;
     public int level = 1;
     public ArrowManager arrowManager;
     public BoardController boardController;
@@ -42,7 +42,7 @@ public class CardSlot : MonoBehaviour, IDropHandler
     public void SetCardInBoard()
     {
         imageCard.sprite = cardInSlot.image;
-        arrowManager.SetDamageArrows(cardInSlot, player);
+        arrowManager.SetDamageArrows(cardInSlot, AttackPower, player); ;
 
 
 

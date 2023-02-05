@@ -17,29 +17,29 @@ public class ArrowManager : MonoBehaviour
         
     }
 
-    public void SetDamageArrows(Card cardRepresentation, Player player)
+    public void SetDamageArrows(Card cardRepresentation,int addedPower, Player player)
     {
         if (player.orientation == Orientation.Up)
         {
-            SetDamageArrow(cardRepresentation.damageUp, arrowUp, player.playerColor);
-            SetDamageArrow(0, arrowDown, player.playerColor);
+            SetDamageArrow(cardRepresentation.damageUp, addedPower,arrowUp, player.playerColor);
+            SetDamageArrow(0, addedPower,arrowDown, player.playerColor);
         }
         else
         {
-            SetDamageArrow(cardRepresentation.damageUp, arrowDown, player.playerColor);
-            SetDamageArrow(0, arrowUp, player.playerColor);
+            SetDamageArrow(cardRepresentation.damageUp, addedPower,arrowDown, player.playerColor);
+            SetDamageArrow(0, addedPower, arrowUp , player.playerColor);
 
         }
-        SetDamageArrow(cardRepresentation.damageLeft, arrowLeft, player.playerColor);
-        SetDamageArrow(cardRepresentation.damageRight, arrowRight, player.playerColor);
+        SetDamageArrow(cardRepresentation.damageLeft, addedPower, arrowLeft, player.playerColor);
+        SetDamageArrow(cardRepresentation.damageRight,addedPower, arrowRight, player.playerColor);
     }
 
-    public void SetDamageArrow(int damage, Arrow arrow, Color color)
+    public void SetDamageArrow(int damage,int power, Arrow arrow, Color color)
     {
         if (damage > 0)
         {
             arrow.SetActive(true);
-            arrow.setText((damage).ToString());
+            arrow.setText((damage+ power).ToString());
             arrow.setColor(color);
         }
         else

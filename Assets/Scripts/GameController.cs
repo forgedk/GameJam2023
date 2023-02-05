@@ -70,6 +70,8 @@ public class GameController : MonoBehaviour
 
                 boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().AttackPower = boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().GetPower(col, row);
 
+                boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().SetCardInBoard();
+
               stackinitialNodes.Push(vectorToInclude);
 
             }
