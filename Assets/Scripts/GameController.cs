@@ -100,8 +100,7 @@ public class GameController : MonoBehaviour
     {
         if (inital.x > include.x) 
         {
-            return card.damageLeft* level
-                ;
+            return card.damageLeft* level;
 
 
         }
@@ -129,6 +128,7 @@ public class GameController : MonoBehaviour
             {
                 Vector2Int vectorToSearch = new Vector2Int(i,j);
                 DamageInput damageCheck = CheckForDamage(vectorToSearch,row,col);
+                print(damageCheck.Damage);
                 damageStack.Push(damageCheck);
 
             }
@@ -143,7 +143,7 @@ public class GameController : MonoBehaviour
 
     public int GetDamage(int originDamage,int defense)
     {
-        if(originDamage> defense)
+        if(originDamage > defense)
         {
             return originDamage - defense;
         }
@@ -186,7 +186,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                cardObjetiveSlot = boardController.CardsSlot[vectorToSearch.x+1, vectorToSearch.y].transform.GetComponent<CardSlot>();
+                cardObjetiveSlot = boardController.CardsSlot[ cardSlot.col, cardSlot.row + 1].transform.GetComponent<CardSlot>();
                 if(cardObjetiveSlot.cardInSlot == null || cardObjetiveSlot.player == playerSelected)
                 {
                     
@@ -196,7 +196,7 @@ public class GameController : MonoBehaviour
                  cardObjetive= cardObjetiveSlot.cardInSlot;
                  CartObjectivedDamage = GetDirectionalDamage(cardObjetiveSlot, cardObjetive.damageUp);
                  CartSelectedDamage = GetDirectionalDamage(cardSlot, cardSelected.damageUp);
-                 damageAccumulate  = damageAccumulate + GetDamage(CartSelectedDamage, CartObjectivedDamage);
+                    damageAccumulate  = damageAccumulate + GetDamage(CartSelectedDamage, CartObjectivedDamage);
              }
 
             }
@@ -210,7 +210,7 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-                     cardObjetiveSlot = boardController.CardsSlot[vectorToSearch.x-1, vectorToSearch.y].transform.GetComponent<CardSlot>();
+                     cardObjetiveSlot = boardController.CardsSlot[cardSlot.col, cardSlot.row -1 ].transform.GetComponent<CardSlot>();
                 if (cardObjetiveSlot.cardInSlot == null || cardObjetiveSlot.player == playerSelected)
                 {
                     }
@@ -229,7 +229,7 @@ public class GameController : MonoBehaviour
 
         if ( cardSlot.col < col-1)
                 {
-                cardObjetiveSlot = boardController.CardsSlot[vectorToSearch.x, vectorToSearch.y+1].transform.GetComponent<CardSlot>();
+                cardObjetiveSlot = boardController.CardsSlot[cardSlot.col+1, cardSlot.row ].transform.GetComponent<CardSlot>();
             if (cardObjetiveSlot.cardInSlot == null || cardObjetiveSlot.player == playerSelected)
             {
 
@@ -250,7 +250,7 @@ public class GameController : MonoBehaviour
 
         if ( cardSlot.col > 0)
         {
-            cardObjetiveSlot = boardController.CardsSlot[vectorToSearch.x, vectorToSearch.y - 1].transform.GetComponent<CardSlot>();
+            cardObjetiveSlot = boardController.CardsSlot[cardSlot.col - 1, cardSlot.row].transform.GetComponent<CardSlot>();
             if (cardObjetiveSlot.cardInSlot == null || cardObjetiveSlot.player == playerSelected)
             { }
             else { 
@@ -277,10 +277,6 @@ public class GameController : MonoBehaviour
         damage = new DamageInput(damageAccumulate, playerDamage);
         return damage;
     }
-
-
-
-
 
 
     public void CheckIfPlayerLose() {
