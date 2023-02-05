@@ -210,7 +210,7 @@ public class BoardController : MonoBehaviour
                 }
                 if (test == 0)
                 {
-                    vectorNodes.Add(new Vector2Int(i, j));
+                    vectorNodes.Add(new Vector2Int(j, i));
 
                 }
             }
@@ -219,7 +219,7 @@ public class BoardController : MonoBehaviour
         return vectorNodes;
     }
 
-    public bool TestIfRelationExist(int rowSelector, int columnSelector, int rowToInspect, int columnToInspect)
+    public bool TestIfRelationExist(int columnSelector, int rowSelector, int columnToInspect, int rowToInspect)
     {
         if (CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().cardInSlot == null)
         {

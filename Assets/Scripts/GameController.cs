@@ -59,7 +59,8 @@ public class GameController : MonoBehaviour
             while (relations.Count > 0)
             {
                 Vector2Int vectorToInclude = relations.Pop();
-                boardController.CardsSlot[vectorToInclude.y, vectorToInclude.x].transform.GetComponent<CardSlot>().AttackPower = 100;
+                boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().AttackPower = 100;
+                stackinitialNodes.Push(vectorToInclude);
 
             }
         }
