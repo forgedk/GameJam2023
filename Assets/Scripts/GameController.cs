@@ -43,7 +43,12 @@ public class GameController : MonoBehaviour
 
     public void UpdateDamageCards(Player player) {
     bool[,,,] relationMatrix =  boardController.GetGraphMatrix(col,row);
+    List<Vector2Int> initialNodes = boardController.GetInitialNode(relationMatrix, col, row);
+ 
+
     }
+
+
 
     public void DeclareWin() {
         print("Jugador 1 Gano");

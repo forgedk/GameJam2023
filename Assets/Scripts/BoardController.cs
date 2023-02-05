@@ -179,6 +179,36 @@ public class BoardController : MonoBehaviour
                         return graphRelations;
     }
 
+    public List<Vector2Int> GetInitialNode(bool[,,,] graphRelations, int XLength, int YLength) {
+        List<Vector2Int> vectorNodes = new List<Vector2Int>();
+
+        for (int i = 0; i < XLength; i++)
+        {
+            for (int j = 0; j < YLength; j++)
+            {
+                int test = 0;
+                for (int a = 0; a < XLength; a++)
+                {
+                    for (int b = 0; b < YLength; b++)
+                    {
+                        if (graphRelations[a, b, i, j]) {
+                            test++;
+               
+                        }
+
+                    }
+                }
+                if (test == 0)
+                {
+                    vectorNodes.Add(new Vector2Int(i, j));
+                
+                }
+            }
+        }
+
+        return vectorNodes;
+    }
+
     public bool TestIfRelationExist(int rowSelector, int columnSelector, int rowToInspect, int columnToInspect) {
         if (CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().cardInSlot == null)
         {
