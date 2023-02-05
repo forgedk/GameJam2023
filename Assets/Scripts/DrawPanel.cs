@@ -20,10 +20,18 @@ public class DrawPanel : MonoBehaviour
 
     public void SetCards(Player player)
     {
+        List<int> indexList = new List<int>();
+
         foreach (CardSelection cardToSelect in cardSelectList)
         {
-            cardToSelect.SetCard(cardList[Random.Range(0, cardList.Length)],player);
+            int idSelectd = Random.Range(0, cardList.Length);
+            while (indexList.Contains(idSelectd))
+                {
+                 idSelectd = Random.Range(0, cardList.Length);
 
+            }
+            cardToSelect.SetCard(cardList[idSelectd],player);
+            indexList.Add(idSelectd);
         }
     }
 
