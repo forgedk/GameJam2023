@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{59c2c3c8-896e-4718-b3cf-f165ae0ca3b9}">
+		<property name="assetPath">
+			<value>FLAUTA GUERRAC136.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>47.647083333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c82e453d-8a16-4973-aafd-1b4288518e1e}</destination>
+		</relationship>
+	</object>
+</objects>

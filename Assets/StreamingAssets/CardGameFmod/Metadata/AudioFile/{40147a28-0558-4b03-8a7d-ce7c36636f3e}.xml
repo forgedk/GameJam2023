@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{40147a28-0558-4b03-8a7d-ce7c36636f3e}">
+		<property name="assetPath">
+			<value>Voz_Mandragora.cm_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.6904308390022678</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c82e453d-8a16-4973-aafd-1b4288518e1e}</destination>
+		</relationship>
+	</object>
+</objects>

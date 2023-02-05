@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 public class Card : MonoBehaviour
 {
     public AudioClip SelectAudioClip, PlayAudioClip;
+    public FMODUnity.StudioEventEmitter SelectAudio;
+    public FMODUnity.StudioEventEmitter PlayAudio;
     public Sprite image;
     public int damageLeft, damageRight, damageUp;
     public string title;
@@ -24,4 +26,15 @@ public class Card : MonoBehaviour
     {
         
     }
+
+    public void playVoice()
+    {
+        SelectAudio.Play();
+    }
+
+    public void playPuesta()
+    {
+        PlayAudio.Play();
+    }
+
 }

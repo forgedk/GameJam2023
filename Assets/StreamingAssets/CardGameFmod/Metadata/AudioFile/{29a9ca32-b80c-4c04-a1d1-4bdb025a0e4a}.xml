@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{29a9ca32-b80c-4c04-a1d1-4bdb025a0e4a}">
+		<property name="assetPath">
+			<value>FLAUTA MENU 199 - Trimmed.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>22.500020833333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c82e453d-8a16-4973-aafd-1b4288518e1e}</destination>
+		</relationship>
+	</object>
+</objects>

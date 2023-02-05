@@ -1,0 +1,569 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8639674936615919135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Voz_DuendeCosteno
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Voz_DuendeCosteno
+  Guid:
+    Data1: 2077184898
+    Data2: 1241654299
+    Data3: 1612863420
+    Data4: 898343185
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4344
+--- !u!114 &-7251147921596037877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/StreamingAssets/CardGameFmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638112095255928677
+  FileSizes:
+  - Name: Desktop
+    Value: 6940800
+  Exists: 1
+--- !u!114 &-6926593823064430544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Voz_MandragoraPapa
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Voz_MandragoraPapa
+  Guid:
+    Data1: -1407889960
+    Data2: 1307967507
+    Data3: 1537816761
+    Data4: 2099051126
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4690
+--- !u!114 &-6870245366525889174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Voz_MandragoraCafe
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Voz_MandragoraCafe
+  Guid:
+    Data1: -2113337702
+    Data2: 1132156962
+    Data3: -1887385674
+    Data4: -216841721
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4690
+--- !u!114 &-6869083409428642908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Cards/Carta_Duende_Coste\xF1o"
+  m_EditorClassIdentifier: 
+  Path: "event:/Cards/Carta_Duende_Coste\xF1o"
+  Guid:
+    Data1: 1503100308
+    Data2: 1103747376
+    Data3: 952758202
+    Data4: -1664302848
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9230
+--- !u!114 &-4631637788950625957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Carta_guerrera_paisa
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Carta_guerrera_paisa
+  Guid:
+    Data1: -760005365
+    Data2: 1074840839
+    Data3: -255316095
+    Data4: -185021149
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9230
+--- !u!114 &-4364251857122235547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/StreamingAssets/CardGameFmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638112095256248751
+  FileSizes:
+  - Name: Desktop
+    Value: 1644
+  Exists: 1
+--- !u!114 &-4345948982649861185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Carta_Duende_Paisa
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Carta_Duende_Paisa
+  Guid:
+    Data1: 1948650483
+    Data2: 1086383093
+    Data3: 1937414576
+    Data4: 1546297189
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9230
+--- !u!114 &-1051694523313675679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Voz_GuerreraCostena
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Voz_GuerreraCostena
+  Guid:
+    Data1: 365590475
+    Data2: 1184378737
+    Data3: -937169985
+    Data4: -1830256559
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6687
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -4364251857122235547}
+  - {fileID: -7251147921596037877}
+  EditorEvents:
+  - {fileID: -4631637788950625957}
+  - {fileID: 2352014439165827502}
+  - {fileID: 7066145823540391905}
+  - {fileID: 7575883598164381410}
+  - {fileID: 4856217721247580265}
+  - {fileID: 4593916989723540839}
+  - {fileID: 4697333504076501933}
+  - {fileID: 358870425325132292}
+  - {fileID: -8639674936615919135}
+  - {fileID: -6869083409428642908}
+  - {fileID: -6870245366525889174}
+  - {fileID: 8446818354291622780}
+  - {fileID: 1583861924046042044}
+  - {fileID: 4131213038496714920}
+  - {fileID: -1051694523313675679}
+  - {fileID: -6926593823064430544}
+  - {fileID: -4345948982649861185}
+  - {fileID: 5675521190833834766}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -7251147921596037877}
+  StringsBanks:
+  - {fileID: -4364251857122235547}
+  cacheTime: 638112095256248751
+  cacheVersion: 131601
+--- !u!114 &358870425325132292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Voz_GuerreraFlores
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Voz_GuerreraFlores
+  Guid:
+    Data1: -290511498
+    Data2: 1209304352
+    Data3: -255503682
+    Data4: 286347968
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5096
+--- !u!114 &1583861924046042044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Voz_GolemOro
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Voz_GolemOro
+  Guid:
+    Data1: -1881672031
+    Data2: 1090624139
+    Data3: 1610113929
+    Data4: 1245100015
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4011
+--- !u!114 &2352014439165827502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Voz_DuendePaisa
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Voz_DuendePaisa
+  Guid:
+    Data1: -847224052
+    Data2: 1147495882
+    Data3: -621537616
+    Data4: -722559666
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7174
+--- !u!114 &4131213038496714920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Carta_golemEsmeralda
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Carta_golemEsmeralda
+  Guid:
+    Data1: 603464115
+    Data2: 1168483310
+    Data3: -1424023932
+    Data4: 541955774
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9230
+--- !u!114 &4593916989723540839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Carta_Mandragora_Papa
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Carta_Mandragora_Papa
+  Guid:
+    Data1: -1323563954
+    Data2: 1091926444
+    Data3: 730766224
+    Data4: -1180618285
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9230
+--- !u!114 &4697333504076501933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Voz_GolemEsmeralda
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Voz_GolemEsmeralda
+  Guid:
+    Data1: -427253419
+    Data2: 1178483520
+    Data3: -689043020
+    Data4: 1913847552
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5874
+--- !u!114 &4856217721247580265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Mx_Batalla
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Mx_Batalla
+  Guid:
+    Data1: -1801243340
+    Data2: 1132839340
+    Data3: 1095535012
+    Data4: -1187677525
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 45363
+--- !u!114 &5675521190833834766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Mx_menu
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Mx_menu
+  Guid:
+    Data1: -1143672076
+    Data2: 1318872011
+    Data3: -238759511
+    Data4: 1039484056
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 64772
+--- !u!114 &7066145823540391905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Cards/Carta_guerrera_Coste\xF1a"
+  m_EditorClassIdentifier: 
+  Path: "event:/Cards/Carta_guerrera_Coste\xF1a"
+  Guid:
+    Data1: -1875707888
+    Data2: 1169763692
+    Data3: 1740284573
+    Data4: -1726727147
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9230
+--- !u!114 &7575883598164381410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Carta_golemOro
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Carta_golemOro
+  Guid:
+    Data1: -155270112
+    Data2: 1322758129
+    Data3: -531976287
+    Data4: 435767464
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9230
+--- !u!114 &8446818354291622780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cards/Carta_Mandragora_cafe
+  m_EditorClassIdentifier: 
+  Path: event:/Cards/Carta_Mandragora_cafe
+  Guid:
+    Data1: 1475475872
+    Data2: 1314786393
+    Data3: -1490989653
+    Data4: -1107987795
+  Banks:
+  - {fileID: -7251147921596037877}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9230

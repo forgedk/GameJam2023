@@ -34,6 +34,7 @@ public class CardSelection : MonoBehaviour, IDragHandler , IBeginDragHandler, IE
     {
         ChangePanel.Invoke(cardRepresentation);
         imageCard.raycastTarget = false;
+        cardRepresentation.playVoice();
 
 
 
@@ -64,6 +65,7 @@ public class CardSelection : MonoBehaviour, IDragHandler , IBeginDragHandler, IE
     {
         imageCard.raycastTarget = true;
         gameObject.transform.position = initialPosition;
+
     }
     
 

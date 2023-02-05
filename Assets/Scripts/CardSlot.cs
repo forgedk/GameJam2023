@@ -56,7 +56,7 @@ public class CardSlot : MonoBehaviour, IDropHandler
             player = searchPlayer;
             SetCardInBoard();
             endTurn.Invoke(player);
-
+            cardInSlot.playPuesta();
         }
     }
 
