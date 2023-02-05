@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
@@ -43,10 +44,31 @@ public class GameController : MonoBehaviour
 
     public void UpdateDamageCards(Player player) {
     bool[,,,] relationMatrix =  boardController.GetGraphMatrix(col,row);
+    bool[,] nodesVisited = new bool[col, row];
     List<Vector2Int> initialNodes = boardController.GetInitialNode(relationMatrix, col, row);
- 
+    Stack<Vector2Int> stackinitialNodes = new Stack<Vector2Int>(initialNodes);
+        while (stackinitialNodes.Count > 0)
+        {
+            Vector2Int initialVector = stackinitialNodes.Pop();
+            if (boardController.CardsSlot[initialVector.x, initialVector.y].transform.GetComponent<CardSlot>().cardInSlot == null)
+            {
+                continue;
+            }
 
-    }
+            Stack<Vector2Int> relations = boardController.GetAllRelationsFromNode(relationMatrix, col, row, initialVector);
+            while (relations.Count > 0)
+            {
+                Vector2Int vectorToInclude = relations.Pop();
+                boardController.CardsSlot[vectorToInclude.y, vectorToInclude.x].transform.GetComponent<CardSlot>().AttackPower = 100;
+
+            }
+        }
+
+
+
+            }
+
+
 
 
 

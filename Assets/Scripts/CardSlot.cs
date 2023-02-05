@@ -65,4 +65,8 @@ public class CardSlot : MonoBehaviour, IDropHandler
         AttackPower += power;
     }
 
+    public void ResetPower() {
+        AttackPower = 0;
+    }
+
 }

@@ -12,7 +12,7 @@ public enum Direction
 public class BoardController : MonoBehaviour
 {
 
-    public  GameController gameController;
+    public GameController gameController;
 
     public GameObject cardSlotTemplate;
     public GameObject[,] CardsSlot;
@@ -20,31 +20,34 @@ public class BoardController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-// Create a 4X4 Board
+        // Create a 4X4 Board
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void CreateCardSlots(int XLength,int YLength,float xOffSet,float yOffSet) {
-        CardsSlot = new GameObject[XLength,YLength];
+    public void CreateCardSlots(int XLength, int YLength, float xOffSet, float yOffSet)
+    {
+        CardsSlot = new GameObject[XLength, YLength];
 
-        numberRow =  XLength;
+        numberRow = XLength;
         numberCol = YLength;
 
         float intervalLenght = this.gameObject.GetComponent<RectTransform>().rect.width / XLength;
         float intervalHeight = this.gameObject.GetComponent<RectTransform>().rect.height / YLength;
 
 
-        for (int i = 0; i < XLength; i++) {
-            for (int j = 0; j < YLength; j++) {
+        for (int i = 0; i < XLength; i++)
+        {
+            for (int j = 0; j < YLength; j++)
+            {
 
-                CardsSlot[i,j] = Instantiate(cardSlotTemplate);
+                CardsSlot[i, j] = Instantiate(cardSlotTemplate);
                 CardsSlot[i, j].GetComponent<RectTransform>().SetParent(this.gameObject.transform);
-                CardsSlot[i, j].transform.localPosition = new Vector3((intervalLenght*(i+ xOffSet)) , intervalHeight*(j+ yOffSet), 0);
+                CardsSlot[i, j].transform.localPosition = new Vector3((intervalLenght * (i + xOffSet)), intervalHeight * (j + yOffSet), 0);
 
                 CardsSlot[i, j].transform.GetComponent<CardSlot>().row = j;
                 CardsSlot[i, j].transform.GetComponent<CardSlot>().col = i;
@@ -53,28 +56,29 @@ public class BoardController : MonoBehaviour
                 CardsSlot[i, j].transform.GetComponent<CardSlot>().endTurn.AddListener(gameController.EndTurn);
 
             }
-        
+
         }
     }
 
-    public bool CheckValidMove(int row,int column,Card card,Player player)
+    public bool CheckValidMove(int row, int column, Card card, Player player)
     {
         if (CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot != null)
         {
-            if(CardsSlot[column, row].transform.GetComponent<CardSlot>().player == player) { return true; }
+            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().player == player) { return true; }
             return false;
         }
 
-        if(player.orientation == Orientation.Up && row == 0) {
-            return true;
-        }
-
-        if (player.orientation == Orientation.Down && row == (numberRow -1))
+        if (player.orientation == Orientation.Up && row == 0)
         {
             return true;
         }
 
-        if (TestIfAdjacentToAlly(row - 1,column,card,player,Direction.Up))
+        if (player.orientation == Orientation.Down && row == (numberRow - 1))
+        {
+            return true;
+        }
+
+        if (TestIfAdjacentToAlly(row - 1, column, card, player, Direction.Up))
         {
             return true;
         }
@@ -84,7 +88,7 @@ public class BoardController : MonoBehaviour
             return true;
         }
 
-        if (TestIfAdjacentToAlly(row , column-1, card, player, Direction.Right))
+        if (TestIfAdjacentToAlly(row, column - 1, card, player, Direction.Right))
         {
             return true;
         }
@@ -98,12 +102,14 @@ public class BoardController : MonoBehaviour
 
     public bool TestIfAdjacentToAlly(int row, int column, Card card, Player player, Direction dir)
     {
-        if (column >= numberCol | column <0) {
-            return false; 
+        if (column >= numberCol | column < 0)
+        {
+            return false;
         }
-  
-        if (row >= numberRow | row < 0) {
-            return false; 
+
+        if (row >= numberRow | row < 0)
+        {
+            return false;
         }
 
         if (CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot == null)
@@ -111,13 +117,14 @@ public class BoardController : MonoBehaviour
             return false;
         }
 
-        if (CardsSlot[column, row].transform.GetComponent<CardSlot>().player != player) {
+        if (CardsSlot[column, row].transform.GetComponent<CardSlot>().player != player)
+        {
             return false;
         }
 
-        if(dir == Direction.Up)
+        if (dir == Direction.Up)
         {
-            if(CardsSlot[column, row].transform.GetComponent<CardSlot>().player.orientation == Orientation.Up || CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot.damageUp > 0)
+            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().player.orientation == Orientation.Up || CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot.damageUp > 0)
             {
                 return true;
 
@@ -135,7 +142,7 @@ public class BoardController : MonoBehaviour
 
         if (dir == Direction.Left)
         {
-            if ( CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot.damageLeft > 0)
+            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot.damageLeft > 0)
             {
                 return true;
 
@@ -154,8 +161,9 @@ public class BoardController : MonoBehaviour
         return false;
     }
 
-    public bool[,,,] GetGraphMatrix(int XLength, int YLength) {
-        bool[,,,] graphRelations =  new bool[XLength, YLength, XLength, YLength];
+    public bool[,,,] GetGraphMatrix(int XLength, int YLength)
+    {
+        bool[,,,] graphRelations = new bool[XLength, YLength, XLength, YLength];
         for (int i = 0; i < XLength; i++)
         {
             for (int j = 0; j < YLength; j++)
@@ -167,7 +175,7 @@ public class BoardController : MonoBehaviour
 
                         {
                             {
-                                graphRelations[i, j, a, b] = TestIfRelationExist(i,j,a,b);
+                                graphRelations[i, j, a, b] = TestIfRelationExist(i, j, a, b);
 
                             }
                         }
@@ -176,10 +184,11 @@ public class BoardController : MonoBehaviour
             }
         }
 
-                        return graphRelations;
+        return graphRelations;
     }
 
-    public List<Vector2Int> GetInitialNode(bool[,,,] graphRelations, int XLength, int YLength) {
+    public List<Vector2Int> GetInitialNode(bool[,,,] graphRelations, int XLength, int YLength)
+    {
         List<Vector2Int> vectorNodes = new List<Vector2Int>();
 
         for (int i = 0; i < XLength; i++)
@@ -191,9 +200,10 @@ public class BoardController : MonoBehaviour
                 {
                     for (int b = 0; b < YLength; b++)
                     {
-                        if (graphRelations[a, b, i, j]) {
+                        if (graphRelations[a, b, i, j])
+                        {
                             test++;
-               
+
                         }
 
                     }
@@ -201,7 +211,7 @@ public class BoardController : MonoBehaviour
                 if (test == 0)
                 {
                     vectorNodes.Add(new Vector2Int(i, j));
-                
+
                 }
             }
         }
@@ -209,7 +219,8 @@ public class BoardController : MonoBehaviour
         return vectorNodes;
     }
 
-    public bool TestIfRelationExist(int rowSelector, int columnSelector, int rowToInspect, int columnToInspect) {
+    public bool TestIfRelationExist(int rowSelector, int columnSelector, int rowToInspect, int columnToInspect)
+    {
         if (CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().cardInSlot == null)
         {
             return false;
@@ -224,18 +235,19 @@ public class BoardController : MonoBehaviour
         {
             return false;
         }
-        // Sprint(String.Format("Objeto de buscada Columna : {0},Fila : {1}",columnSelector,rowSelector));
-        // Sprint(String.Format("Objeto de inteacción Columna : {0},Fila : {1}", columnToInspect, rowToInspect));
 
         Player player = CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().player;
 
-        if (columnSelector == columnToInspect) {
-            if (Math.Abs(rowSelector - rowToInspect) == 1) {
-                if (rowSelector > rowToInspect && player.orientation == Orientation.Down)  {
+        if (columnSelector == columnToInspect)
+        {
+            if (Math.Abs(rowSelector - rowToInspect) == 1)
+            {
+                if (rowSelector > rowToInspect && player.orientation == Orientation.Down)
+                {
                     return true;
                 }
-                if (rowSelector < rowToInspect && player.orientation == Orientation.Up) 
-                { 
+                if (rowSelector < rowToInspect && player.orientation == Orientation.Up)
+                {
                     return true;
                 }
             }
@@ -272,10 +284,21 @@ public class BoardController : MonoBehaviour
 
         return false;
 
-    
+
     }
 
-
-
-
+    public Stack<Vector2Int> GetAllRelationsFromNode(bool[,,,] graphRelations, int XLength, int YLength, Vector2Int relation)
+    {
+        Stack<Vector2Int> result = new Stack<Vector2Int>();
+        for (int i = 0; i < XLength; i++)
+        {
+            for (int j = 0; j < YLength; j++)
+            {
+                if (graphRelations[relation.x, relation.y, i, j]) {
+                    result.Push(new Vector2Int(i, j));
+                }
+            }
+        }
+        return result;
+    }
 }
