@@ -29,6 +29,19 @@ public class BoardController : MonoBehaviour
 
     }
 
+    public void ResetCardPower(int XLength, int YLength)
+    {
+        for (int i = 0; i < XLength; i++)
+        {
+            for (int j = 0; j < YLength; j++)
+            {
+                CardsSlot[i, j].GetComponent<CardSlot>().ResetPowerMatrix(XLength,YLength);
+
+            }
+
+        }
+    }
+
     public void CreateCardSlots(int XLength, int YLength, float xOffSet, float yOffSet)
     {
         CardsSlot = new GameObject[XLength, YLength];
@@ -210,7 +223,7 @@ public class BoardController : MonoBehaviour
                 }
                 if (test == 0)
                 {
-                    vectorNodes.Add(new Vector2Int(j, i));
+                    vectorNodes.Add(new Vector2Int(i, j));
 
                 }
             }

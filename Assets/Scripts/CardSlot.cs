@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 [Serializable]
 public class EndTurn : UnityEvent<Player> { }
 
 public class CardSlot : MonoBehaviour, IDropHandler
 {
+
+    public int[,] powerMatrix;
     public Card cardInSlot;
     public Player player;
     public UnityEngine.UI.Image imageCard;
@@ -61,8 +64,28 @@ public class CardSlot : MonoBehaviour, IDropHandler
     }
 
 
-    public void AddToPower(ref int power) {
-        AttackPower += power;
+    public void AddToPower(int power,int row,int col) {
+        if (powerMatrix[row,col] < power) { 
+            powerMatrix[row,col] = power;    
+        }
+    }
+
+    public void ResetPowerMatrix(int row, int col)
+    {
+        powerMatrix = new int[row, col];
+    }
+
+    public int GetPower(int row, int col)
+    {
+        int power = 0;
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                power += powerMatrix[i, j];
+            }
+        }
+        return power;
     }
 
     public void ResetPower() {

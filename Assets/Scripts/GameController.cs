@@ -43,13 +43,18 @@ public class GameController : MonoBehaviour
     }
 
     public void UpdateDamageCards(Player player) {
+    boardController.ResetCardPower(col, row);
+
     bool[,,,] relationMatrix =  boardController.GetGraphMatrix(col,row);
     bool[,] nodesVisited = new bool[col, row];
+
     List<Vector2Int> initialNodes = boardController.GetInitialNode(relationMatrix, col, row);
     Stack<Vector2Int> stackinitialNodes = new Stack<Vector2Int>(initialNodes);
         while (stackinitialNodes.Count > 0)
         {
+          
             Vector2Int initialVector = stackinitialNodes.Pop();
+                nodesVisited[initialVector.x,initialVector.y] = true;
             if (boardController.CardsSlot[initialVector.x, initialVector.y].transform.GetComponent<CardSlot>().cardInSlot == null)
             {
                 continue;
@@ -59,8 +64,13 @@ public class GameController : MonoBehaviour
             while (relations.Count > 0)
             {
                 Vector2Int vectorToInclude = relations.Pop();
-                boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().AttackPower = 100;
-                stackinitialNodes.Push(vectorToInclude);
+                CardSlot cardPrincipal = boardController.CardsSlot[initialVector.x, initialVector.y].transform.GetComponent<CardSlot>();
+
+                boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().AddToPower(cardPrincipal.cardInSlot.damageUp +cardPrincipal.GetPower(col,row), initialVector.x, initialVector.y);
+
+                boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().AttackPower = boardController.CardsSlot[vectorToInclude.x, vectorToInclude.y].transform.GetComponent<CardSlot>().GetPower(col, row);
+
+              stackinitialNodes.Push(vectorToInclude);
 
             }
         }
