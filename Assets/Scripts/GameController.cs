@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public struct DamageInput
@@ -25,6 +27,15 @@ public class GameController : MonoBehaviour
     public BoardController boardController;
     public DrawPanel drawController;
     public Player player1, player2;
+
+    public TMP_Text player1HitPoints;
+    public TMP_Text player2HitPoints;
+    public TMP_Text textMatchEnding;
+
+    public GameObject panelEndMatch;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +46,15 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            Application.Quit();
+        }
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
     }
 
     public void SetTurn(Player player)
@@ -47,6 +66,11 @@ public class GameController : MonoBehaviour
     public void EndTurn(Player player) {
         UpdateDamageCards(player);
         StartFight();
+
+        player1HitPoints.text = string.Format("Player 1: {0}", player1.lifePoints);
+        player2HitPoints.text = string.Format("Player 2: {0}", player2.lifePoints);
+
+
         CheckIfPlayerLose();
         if (player == player1)
         {
@@ -128,10 +152,14 @@ public class GameController : MonoBehaviour
             {
                 Vector2Int vectorToSearch = new Vector2Int(i,j);
                 DamageInput damageCheck = CheckForDamage(vectorToSearch,row,col);
-                print(damageCheck.Damage);
                 damageStack.Push(damageCheck);
-
             }
+        }
+
+        while (damageStack.Count > 0) 
+        { 
+            DamageInput damage = damageStack.Pop();
+            damage.Player.lifePoints -=damage.Damage;
         }
     }
 
@@ -282,12 +310,15 @@ public class GameController : MonoBehaviour
     public void CheckIfPlayerLose() {
         if(player1.lifePoints <= 0)
             {
-                print("Player 2 win");
+            panelEndMatch.SetActive(true);
+            textMatchEnding.text = "Jugador 2 Gana";
             }
 
             if (player2.lifePoints <= 0)
             {
-                print("Player 1 win");
-            }
+            panelEndMatch.SetActive(true);
+            textMatchEnding.text = "Jugador 1 Gana";
         }
+        }
+
 }

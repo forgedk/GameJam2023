@@ -208,20 +208,20 @@ public class BoardController : MonoBehaviour
         {
             for (int j = 0; j < YLength; j++)
             {
-                int test = 0;
+                int numberOfRelatiosWithOtherCards = 0;
                 for (int a = 0; a < XLength; a++)
                 {
                     for (int b = 0; b < YLength; b++)
                     {
                         if (graphRelations[a, b, i, j])
                         {
-                            test++;
+                            numberOfRelatiosWithOtherCards++;
 
                         }
 
                     }
                 }
-                if (test == 0)
+                if (numberOfRelatiosWithOtherCards == 0)
                 {
                     vectorNodes.Add(new Vector2Int(i, j));
 

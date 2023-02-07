@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/CardGameFmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638112095255928677
+  lastModified: 638112146745642287
   FileSizes:
   - Name: Desktop
     Value: 6940800
@@ -170,7 +170,7 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/CardGameFmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638112095256248751
+  lastModified: 638112146745652299
   FileSizes:
   - Name: Desktop
     Value: 1644
@@ -268,7 +268,7 @@ MonoBehaviour:
   - {fileID: -7251147921596037877}
   StringsBanks:
   - {fileID: -4364251857122235547}
-  cacheTime: 638112095256248751
+  cacheTime: 638112146745652299
   cacheVersion: 131601
 --- !u!114 &358870425325132292
 MonoBehaviour:

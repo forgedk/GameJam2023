@@ -5,10 +5,9 @@ using UnityEngine.UIElements;
 
 public class Card : MonoBehaviour
 {
-    public AudioClip SelectAudioClip, PlayAudioClip;
     public FMODUnity.StudioEventEmitter SelectAudio;
     public FMODUnity.StudioEventEmitter PlayAudio;
-    public Sprite image;
+    public Sprite image,imageInGame;
     public int damageLeft, damageRight, damageUp;
     public string title;
     public string text;
