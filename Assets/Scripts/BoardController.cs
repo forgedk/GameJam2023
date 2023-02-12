@@ -4,11 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-
-public enum Direction
-{
-    Up, Down, Left, Right
-}
 public class BoardController : MonoBehaviour
 {
 
@@ -72,7 +67,7 @@ public class BoardController : MonoBehaviour
         }
     }
 
-    public bool CheckValidMove(int row, int column, Card card, Player player)
+    public bool CheckValidMove(int row, int column, Player player)
     {
         if (CardsSlot[column, row].transform.GetComponent<CardSlot>().CardInSlot != null)
         {
@@ -291,12 +286,7 @@ public class BoardController : MonoBehaviour
 
             }
         }
-
-
-
         return false;
-
-
     }
 
     public Stack<Vector2Int> GetAllRelationsFromNode(bool[,,,] graphRelations, int XLength, int YLength, Vector2Int relation)

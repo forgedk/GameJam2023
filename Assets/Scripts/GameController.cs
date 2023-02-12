@@ -136,7 +136,7 @@ public class GameController : MonoBehaviour
         if (cardSlotSelect.ColPosition < cardSlotGivingPower.ColPosition)
         {
 
-            return cardSlotSelect.CardInSlot.damageRight* cardSlotSelect.Level;
+            return cardSlotSelect.CardInSlot.damageRight * cardSlotSelect.Level;
 
         }
 
@@ -161,13 +161,10 @@ public class GameController : MonoBehaviour
         while (damageStack.Count > 0) 
         { 
             DamageInput damage = damageStack.Pop();
+            if(damage.Damage > 0)
+            print(string.Format("Damage {0} and Player : {1}",damage.Damage,damage.Player.name));
             damage.Player.lifePoints -= damage.Damage;
         }
-    }
-
-    public int  GetDirectionalDamage(CardSlot cardSlot, int damage)
-    {
-        return cardSlot.AttackPower + (damage * cardSlot.Level);
     }
 
     public int GetDamage(int originDamage,int defense)
@@ -179,10 +176,10 @@ public class GameController : MonoBehaviour
         return 0;
     }
 
-
-    public DamageInput CheckForDamage(Vector2Int vectorToSearch,int row, int col)
+// Buscar optimización
+    public DamageInput CheckForDamage(Vector2Int cardSlotToSearch,int row, int col)
     {
-        CardSlot cardSlot = boardController.CardsSlot[vectorToSearch.y, vectorToSearch.x].transform.GetComponent<CardSlot>();
+        CardSlot cardSlot = boardController.CardsSlot[cardSlotToSearch.y, cardSlotToSearch.x].transform.GetComponent<CardSlot>();
         CardSlot cardObjetiveSlot;
 
         Card cardObjetive;
@@ -209,7 +206,9 @@ public class GameController : MonoBehaviour
         {
             if(cardSlot.RowPosition == row - 1)
             {
-                damageAccumulate = damageAccumulate + GetDirectionalDamage(cardSlot, cardSelected.damageUp);
+                damageAccumulate += cardSlot.GetDirectionalDamage(Direction.Up);
+
+
             }
             else
             {
@@ -220,10 +219,9 @@ public class GameController : MonoBehaviour
                 }
                 else { 
 
-                 cardObjetive = cardObjetiveSlot.CardInSlot;
-                 CartObjectivedDamage = GetDirectionalDamage(cardObjetiveSlot, cardObjetive.damageUp);
-                 CartSelectedDamage = GetDirectionalDamage(cardSlot, cardSelected.damageUp);
-                 damageAccumulate  = damageAccumulate + GetDamage(CartSelectedDamage, CartObjectivedDamage);
+                 CartObjectivedDamage = cardObjetiveSlot.GetDirectionalDamage(Direction.Up);
+                 CartSelectedDamage = cardSlot.GetDirectionalDamage(Direction.Up);
+                 damageAccumulate  += GetDamage(CartSelectedDamage, CartObjectivedDamage);
              }
 
             }
@@ -233,7 +231,7 @@ public class GameController : MonoBehaviour
             {
                 if (cardSlot.RowPosition == 0)
                 {
-                    damageAccumulate = damageAccumulate + GetDirectionalDamage(cardSlot, cardSelected.damageUp);
+                    damageAccumulate += cardSlot.GetDirectionalDamage(Direction.Up);
                 }
                 else
                 {
@@ -243,10 +241,9 @@ public class GameController : MonoBehaviour
                     }
                     else
                     {
-                         cardObjetive = cardObjetiveSlot.CardInSlot;
-                         CartObjectivedDamage = GetDirectionalDamage(cardObjetiveSlot, cardObjetive.damageUp);
-                         CartSelectedDamage = GetDirectionalDamage(cardSlot, cardSelected.damageUp);
-                         damageAccumulate = damageAccumulate + GetDamage(CartSelectedDamage,CartObjectivedDamage);
+                    CartObjectivedDamage = cardObjetiveSlot.GetDirectionalDamage(Direction.Up);
+                    CartSelectedDamage = cardSlot.GetDirectionalDamage(Direction.Up);
+                    damageAccumulate += GetDamage(CartSelectedDamage,CartObjectivedDamage);
                         }
                     }
 
@@ -265,10 +262,9 @@ public class GameController : MonoBehaviour
             {
                 if (cardSelected.damageRight > 0)
                 {
-                    cardObjetive = cardObjetiveSlot.CardInSlot;
-                    CartObjectivedDamage = GetDirectionalDamage(cardObjetiveSlot, cardObjetive.damageLeft);
-                    CartSelectedDamage = GetDirectionalDamage(cardSlot, cardSelected.damageRight);
-                    damageAccumulate = damageAccumulate + GetDamage(CartSelectedDamage, CartObjectivedDamage);
+                    CartObjectivedDamage = cardObjetiveSlot.GetDirectionalDamage(Direction.Left);
+                    CartSelectedDamage = cardSlot.GetDirectionalDamage(Direction.Right);
+                    damageAccumulate += GetDamage(CartSelectedDamage, CartObjectivedDamage);
                 }
             }
         }
@@ -282,10 +278,9 @@ public class GameController : MonoBehaviour
             else { 
          if (cardSelected.damageLeft > 0)
                 {
-                    cardObjetive = cardObjetiveSlot.CardInSlot;
-                    CartObjectivedDamage = GetDirectionalDamage(cardObjetiveSlot, cardObjetive.damageRight);
-                    CartSelectedDamage = GetDirectionalDamage(cardSlot, cardSelected.damageLeft);
-                    damageAccumulate = damageAccumulate + GetDamage(CartSelectedDamage, CartObjectivedDamage);
+                    CartObjectivedDamage = cardObjetiveSlot.GetDirectionalDamage(Direction.Right);
+                    CartSelectedDamage = cardSlot.GetDirectionalDamage(Direction.Left);
+                    damageAccumulate += GetDamage(CartSelectedDamage, CartObjectivedDamage);
             }
             }
 
@@ -300,6 +295,9 @@ public class GameController : MonoBehaviour
         {
             playerDamage = player1;
         }
+
+        if (damageAccumulate > 0)
+            cardSlot.StartFlip();
         damage = new DamageInput(damageAccumulate, playerDamage);
         return damage;
     }
@@ -307,16 +305,19 @@ public class GameController : MonoBehaviour
 
     public void CheckIfPlayerLose() {
         if(player1.lifePoints <= 0)
-            {
-            panelEndMatch.SetActive(true);
-            textMatchEnding.text = "Jugador 2 Gana";
-            }
+        {
+            PlayerLose(panelEndMatch, "Jugador 2 Gana");
+        }
 
-            if (player2.lifePoints <= 0)
-            {
-            panelEndMatch.SetActive(true);
-            textMatchEnding.text = "Jugador 1 Gana";
+        if (player2.lifePoints <= 0)
+        {
+            PlayerLose(panelEndMatch, "Jugador 1 Gana");
         }
         }
 
+    private void PlayerLose(GameObject panel, string text)
+    {
+        panel.SetActive(true);
+        textMatchEnding.text =  text;
+    }
 }

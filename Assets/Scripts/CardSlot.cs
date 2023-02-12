@@ -8,6 +8,10 @@ using UnityEngine.UIElements;
 
 [Serializable]
 public class EndTurn : UnityEvent<Player> { }
+public enum Direction
+{
+    Up, Down, Left, Right
+}
 
 public class CardSlot : MonoBehaviour, IDropHandler
 {
@@ -25,6 +29,9 @@ public class CardSlot : MonoBehaviour, IDropHandler
 
     [SerializeField]
     private BoardController boardController;
+
+    [SerializeField]
+    private Animator animator;
 
     private int rowPosition;
     private int colPosition;
@@ -57,11 +64,11 @@ public class CardSlot : MonoBehaviour, IDropHandler
         Player actualPlayer = eventData.pointerDrag.GetComponent<CardSelection>().ownPlayer;
         Card posibleCard = eventData.pointerDrag.GetComponent<CardSelection>().cardRepresentation;
 
-        if (BoardController.CheckValidMove(RowPosition,ColPosition, posibleCard,actualPlayer)) 
+        if (BoardController.CheckValidMove(RowPosition,ColPosition,actualPlayer)) 
         { 
             if(CardInSlot == posibleCard)
             {
-                Level= Level + 1;
+                Level++;
             }
             else
             {
@@ -80,8 +87,10 @@ public class CardSlot : MonoBehaviour, IDropHandler
 
     public void SetCardInBoard()
     {
+        if (CardInSlot != null){ 
         imageCard.sprite = CardInSlot.imageInGame;
-        arrowManager.SetDamageArrows(CardInSlot, Level, AttackPower, Player); ;
+        arrowManager.SetDamageArrows(CardInSlot, Level, AttackPower, Player);
+        }
     }
 
 
@@ -113,4 +122,34 @@ public class CardSlot : MonoBehaviour, IDropHandler
         AttackPower = 0;
     }
 
+    public int GetDirectionalDamage(Direction directionToGetDamage) {
+        int directionalDamage = 0;
+        switch (directionToGetDamage)
+        {
+            case Direction.Up:
+                directionalDamage = cardInSlot.damageUp;
+                break;
+            case Direction.Down:
+                directionalDamage = cardInSlot.damageUp;
+                break;
+            case Direction.Left:
+                directionalDamage = cardInSlot.damageLeft;
+                break;
+            case Direction.Right:
+                directionalDamage = cardInSlot.damageRight;
+                break;
+        }
+        return (directionalDamage * Level) + attackPower;
+
+    }
+
+    public void EndFlip() {
+        animator.SetBool("Flip", false);
+    
+    
+    }
+
+    public void StartFlip() {
+        animator.SetBool("Flip", true);
+    }
 }

@@ -34,6 +34,13 @@ public class ArrowManager : MonoBehaviour
         SetDamageArrow(cardRepresentation.damageRight * level, addedPower, arrowRight, player.playerColor);
     }
 
+    public void HideArrows() {
+        arrowUp.SetActive(false);
+        arrowDown.SetActive(false);
+        arrowLeft.SetActive(false);
+        arrowRight.SetActive(false);
+    }
+
     public void SetDamageArrow(int damage,int power, Arrow arrow, Color color)
     {
         if (damage > 0)
