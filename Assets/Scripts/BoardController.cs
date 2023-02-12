@@ -20,7 +20,6 @@ public class BoardController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Create a 4X4 Board
     }
 
     // Update is called once per frame
@@ -62,9 +61,9 @@ public class BoardController : MonoBehaviour
                 CardsSlot[i, j].GetComponent<RectTransform>().SetParent(this.gameObject.transform);
                 CardsSlot[i, j].transform.localPosition = new Vector3((intervalLenght * (i + xOffSet)), intervalHeight * (j + yOffSet), 0);
 
-                CardsSlot[i, j].transform.GetComponent<CardSlot>().row = j;
-                CardsSlot[i, j].transform.GetComponent<CardSlot>().col = i;
-                CardsSlot[i, j].transform.GetComponent<CardSlot>().boardController = this;
+                CardsSlot[i, j].transform.GetComponent<CardSlot>().RowPosition = j;
+                CardsSlot[i, j].transform.GetComponent<CardSlot>().ColPosition = i;
+                CardsSlot[i, j].transform.GetComponent<CardSlot>().BoardController = this;
 
                 CardsSlot[i, j].transform.GetComponent<CardSlot>().endTurn.AddListener(gameController.EndTurn);
 
@@ -75,9 +74,9 @@ public class BoardController : MonoBehaviour
 
     public bool CheckValidMove(int row, int column, Card card, Player player)
     {
-        if (CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot != null)
+        if (CardsSlot[column, row].transform.GetComponent<CardSlot>().CardInSlot != null)
         {
-            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().player == player) { return true; }
+            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().Player == player) { return true; }
             return false;
         }
 
@@ -91,53 +90,53 @@ public class BoardController : MonoBehaviour
             return true;
         }
 
-        if (TestIfAdjacentToAlly(row - 1, column, card, player, Direction.Up))
+        if (TestIfAdjacentToAlly(row - 1, column, player, Direction.Up))
         {
             return true;
         }
 
-        if (TestIfAdjacentToAlly(row + 1, column, card, player, Direction.Down))
+        if (TestIfAdjacentToAlly(row + 1, column, player, Direction.Down))
         {
             return true;
         }
 
-        if (TestIfAdjacentToAlly(row, column - 1, card, player, Direction.Right))
+        if (TestIfAdjacentToAlly(row, column - 1, player, Direction.Right))
         {
             return true;
         }
 
-        if (TestIfAdjacentToAlly(row, column + 1, card, player, Direction.Left))
+        if (TestIfAdjacentToAlly(row, column + 1, player, Direction.Left))
         {
             return true;
         }
         return false;
     }
 
-    public bool TestIfAdjacentToAlly(int row, int column, Card card, Player player, Direction dir)
+    public bool TestIfAdjacentToAlly(int rowAllyPosition, int columnAllyPosition, Player player, Direction dir)
     {
-        if (column >= numberCol | column < 0)
+        if (columnAllyPosition >= numberCol | columnAllyPosition < 0)
         {
             return false;
         }
 
-        if (row >= numberRow | row < 0)
+        if (rowAllyPosition >= numberRow | rowAllyPosition < 0)
         {
             return false;
         }
 
-        if (CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot == null)
+        if (CardsSlot[columnAllyPosition, rowAllyPosition].transform.GetComponent<CardSlot>().CardInSlot == null)
         {
             return false;
         }
 
-        if (CardsSlot[column, row].transform.GetComponent<CardSlot>().player != player)
+        if (CardsSlot[columnAllyPosition, rowAllyPosition].transform.GetComponent<CardSlot>().Player != player)
         {
             return false;
         }
 
         if (dir == Direction.Up)
         {
-            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().player.orientation == Orientation.Up || CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot.damageUp > 0)
+            if (CardsSlot[columnAllyPosition, rowAllyPosition].transform.GetComponent<CardSlot>().Player.orientation == Orientation.Up || CardsSlot[columnAllyPosition, rowAllyPosition].transform.GetComponent<CardSlot>().CardInSlot.damageUp > 0)
             {
                 return true;
 
@@ -146,7 +145,7 @@ public class BoardController : MonoBehaviour
 
         if (dir == Direction.Down)
         {
-            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().player.orientation == Orientation.Down || CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot.damageUp > 0)
+            if (CardsSlot[columnAllyPosition, rowAllyPosition].transform.GetComponent<CardSlot>().Player.orientation == Orientation.Down || CardsSlot[columnAllyPosition, rowAllyPosition].transform.GetComponent<CardSlot>().CardInSlot.damageUp > 0)
             {
                 return true;
 
@@ -155,7 +154,7 @@ public class BoardController : MonoBehaviour
 
         if (dir == Direction.Left)
         {
-            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot.damageLeft > 0)
+            if (CardsSlot[columnAllyPosition, rowAllyPosition].transform.GetComponent<CardSlot>().CardInSlot.damageLeft > 0)
             {
                 return true;
 
@@ -164,7 +163,7 @@ public class BoardController : MonoBehaviour
 
         if (dir == Direction.Right)
         {
-            if (CardsSlot[column, row].transform.GetComponent<CardSlot>().cardInSlot.damageRight > 0)
+            if (CardsSlot[columnAllyPosition, rowAllyPosition].transform.GetComponent<CardSlot>().CardInSlot.damageRight > 0)
             {
                 return true;
 
@@ -234,22 +233,22 @@ public class BoardController : MonoBehaviour
 
     public bool TestIfRelationExist(int columnSelector, int rowSelector, int columnToInspect, int rowToInspect)
     {
-        if (CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().cardInSlot == null)
+        if (CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().CardInSlot == null)
         {
             return false;
         }
 
-        if (CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().cardInSlot == null)
+        if (CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().CardInSlot == null)
         {
             return false;
         }
 
-        if (CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().player != CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().player)
+        if (CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().Player != CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().Player)
         {
             return false;
         }
 
-        Player player = CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().player;
+        Player player = CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().Player;
 
         if (columnSelector == columnToInspect)
         {
@@ -272,7 +271,7 @@ public class BoardController : MonoBehaviour
             {
                 if (columnSelector < columnToInspect)
                 {
-                    if (CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().cardInSlot.damageRight > 0 && CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().cardInSlot.damageLeft == 0)
+                    if (CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().CardInSlot.damageRight > 0 && CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().CardInSlot.damageLeft == 0)
                     {
                         return true;
 
@@ -282,7 +281,7 @@ public class BoardController : MonoBehaviour
 
                 if (columnSelector > columnToInspect)
                 {
-                    if (CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().cardInSlot.damageLeft > 0 && CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().cardInSlot.damageRight == 0)
+                    if (CardsSlot[columnSelector, rowSelector].transform.GetComponent<CardSlot>().CardInSlot.damageLeft > 0 && CardsSlot[columnToInspect, rowToInspect].transform.GetComponent<CardSlot>().CardInSlot.damageRight == 0)
                     {
                         return true;
 

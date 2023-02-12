@@ -2184,8 +2184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77402b0c6a34dda47abe8850d52753fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  row: 4
-  col: 4
+  numberOfRows: 4
+  numberOfColumns: 4
   boardController: {fileID: 120494298}
   drawController: {fileID: 1350691299}
   player1: {fileID: 2050128240}

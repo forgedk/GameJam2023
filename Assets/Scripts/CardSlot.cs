@@ -12,20 +12,33 @@ public class EndTurn : UnityEvent<Player> { }
 public class CardSlot : MonoBehaviour, IDropHandler
 {
 
-    public int[,] powerMatrix;
-    public Card cardInSlot;
-    public Player player;
+    private int[,] powerMatrix;
+    private Card cardInSlot;
+    private Player player;
     public UnityEngine.UI.Image imageCard;
 
-    public int AttackPower =0;
-    public int level = 1;
-    public ArrowManager arrowManager;
-    public BoardController boardController;
+    private int attackPower = 0;
+    private int level = 1;
 
-    public int row;
-    public int col;
+    [SerializeField]
+    private ArrowManager arrowManager;
+
+    [SerializeField]
+    private BoardController boardController;
+
+    private int rowPosition;
+    private int colPosition;
 
     public EndTurn endTurn;
+
+    public int[,] PowerMatrix { get => powerMatrix; set => powerMatrix = value; }
+    public Card CardInSlot { get => cardInSlot; set => cardInSlot = value; }
+    public Player Player { get => player; set => player = value; }
+    public int AttackPower { get => attackPower; set => attackPower = value; }
+    public int Level { get => level; set => level = value; }
+    public int ColPosition { get => colPosition; set => colPosition = value; }
+    public int RowPosition { get => rowPosition; set => rowPosition = value; }
+    public BoardController BoardController { get => boardController; set => boardController = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -39,45 +52,48 @@ public class CardSlot : MonoBehaviour, IDropHandler
         
     }
 
-    public void SetCardInBoard()
-    {
-        imageCard.sprite = cardInSlot.imageInGame;
-        arrowManager.SetDamageArrows(cardInSlot,level, AttackPower, player); ;
-
-    }
-
     public void OnDrop(PointerEventData eventData) 
     {
-        Player searchPlayer = eventData.pointerDrag.GetComponent<CardSelection>().ownPlayer;
+        Player actualPlayer = eventData.pointerDrag.GetComponent<CardSelection>().ownPlayer;
         Card posibleCard = eventData.pointerDrag.GetComponent<CardSelection>().cardRepresentation;
-        if (boardController.CheckValidMove(row,col, posibleCard,searchPlayer)) 
+
+        if (BoardController.CheckValidMove(RowPosition,ColPosition, posibleCard,actualPlayer)) 
         { 
-            if(cardInSlot == posibleCard)
+            if(CardInSlot == posibleCard)
             {
-                level= level + 1; ;
+                Level= Level + 1;
             }
             else
             {
-                level = 1;
+                Level = 1;
             }
-            cardInSlot = posibleCard;
-            player = searchPlayer;
+
+            CardInSlot = posibleCard;
+            Player = actualPlayer;
+
+            CardInSlot.playPuesta();
             SetCardInBoard();
-            endTurn.Invoke(player);
-            cardInSlot.playPuesta();
+            endTurn.Invoke(Player);
+        
         }
+    }
+
+    public void SetCardInBoard()
+    {
+        imageCard.sprite = CardInSlot.imageInGame;
+        arrowManager.SetDamageArrows(CardInSlot, Level, AttackPower, Player); ;
     }
 
 
     public void AddToPower(int power,int row,int col) {
-        if (powerMatrix[row,col] < power) { 
-            powerMatrix[row,col] = power;    
+        if (PowerMatrix[row,col] < power) { 
+            PowerMatrix[row,col] = power;    
         }
     }
 
     public void ResetPowerMatrix(int row, int col)
     {
-        powerMatrix = new int[row, col];
+        PowerMatrix = new int[row, col];
     }
 
     public int GetPower(int row, int col)
@@ -87,7 +103,7 @@ public class CardSlot : MonoBehaviour, IDropHandler
         {
             for (int j = 0; j < col; j++)
             {
-                power += powerMatrix[i, j];
+                power += PowerMatrix[i, j];
             }
         }
         return power;
