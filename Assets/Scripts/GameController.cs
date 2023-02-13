@@ -64,7 +64,7 @@ public class GameController : MonoBehaviour
 
     public void EndTurn(Player player) {
         UpdateDamageCards(player);
-        StartFight();
+        StartFight(player);
 
         player1HitPoints.text = string.Format("Player 1: {0}", player1.lifePoints);
         player2HitPoints.text = string.Format("Player 2: {0}", player2.lifePoints);
@@ -144,7 +144,7 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void StartFight()
+    public void StartFight(Player actualPlayer)
     {
         Stack<DamageInput> damageStack = new Stack<DamageInput> ();
 
@@ -152,7 +152,17 @@ public class GameController : MonoBehaviour
         {
             for (int j = 0; j < numberOfColumns; j++)
             {
-                Vector2Int cardSlotToSearch = new Vector2Int(i,j);
+                Vector2Int vectorCardSlot = new Vector2Int(i,j);
+                CardSlot cardSlotToSearch = boardController.CardsSlot[vectorCardSlot.y, vectorCardSlot.x].transform.GetComponent<CardSlot>();
+                if (cardSlotToSearch.CardInSlot == null) {
+                    continue;
+                }
+
+                if (cardSlotToSearch.Player != actualPlayer)
+                {
+                    continue;
+                }
+
                 DamageInput damageCheck = CheckForDamage(cardSlotToSearch,numberOfRows,numberOfColumns);
                 damageStack.Push(damageCheck);
             }
@@ -177,9 +187,8 @@ public class GameController : MonoBehaviour
     }
 
 // Buscar optimización
-    public DamageInput CheckForDamage(Vector2Int cardSlotToSearch,int row, int col)
+    public DamageInput CheckForDamage(CardSlot cardSlot, int row, int col)
     {
-        CardSlot cardSlot = boardController.CardsSlot[cardSlotToSearch.y, cardSlotToSearch.x].transform.GetComponent<CardSlot>();
         CardSlot cardObjetiveSlot;
 
         Card cardObjetive;
@@ -297,8 +306,10 @@ public class GameController : MonoBehaviour
         }
 
         if (damageAccumulate > 0)
+        {
             cardSlot.StartFlip();
-        damage = new DamageInput(damageAccumulate, playerDamage);
+            damage = new DamageInput(damageAccumulate, playerDamage);
+        }
         return damage;
     }
 
