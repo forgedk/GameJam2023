@@ -172,7 +172,6 @@ public class GameController : MonoBehaviour
         { 
             DamageInput damage = damageStack.Pop();
             if(damage.Damage > 0)
-            print(string.Format("Damage {0} and Player : {1}",damage.Damage,damage.Player.name));
             damage.Player.lifePoints -= damage.Damage;
         }
     }

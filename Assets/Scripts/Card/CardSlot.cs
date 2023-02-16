@@ -47,6 +47,7 @@ public class CardSlot : MonoBehaviour, IDropHandler
     public int RowPosition { get => rowPosition; set => rowPosition = value; }
     public BoardController BoardController { get => boardController; set => boardController = value; }
 
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -152,4 +153,5 @@ public class CardSlot : MonoBehaviour, IDropHandler
     public void StartFlip() {
         animator.SetBool("Flip", true);
     }
+    
 }
