@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -29,9 +31,9 @@ public class GameController : MonoBehaviour
 
     public TMP_Text player1HitPoints;
     public TMP_Text player2HitPoints;
-    public TMP_Text textMatchEnding;
+    public TMP_Text textInfoMatch;
 
-    public GameObject panelEndMatch;
+    public GameObject panelInfoMatch;
 
 
 
@@ -58,6 +60,7 @@ public class GameController : MonoBehaviour
 
     public void SetTurn(Player player)
     {
+        StartCoroutine(ShowNextTurn(string.Format("Turno : {0}",player.name)));
         drawController.SetActive(true);
         drawController.SetCards(player);
     }
@@ -66,11 +69,14 @@ public class GameController : MonoBehaviour
         UpdateDamageCards(player);
         StartFight(player);
 
-        player1HitPoints.text = string.Format("Player 1: {0}", player1.lifePoints);
-        player2HitPoints.text = string.Format("Player 2: {0}", player2.lifePoints);
+        player1HitPoints.text = string.Format("Jugador 1: {0}", player1.lifePoints);
+        player2HitPoints.text = string.Format("Jugador 2: {0}", player2.lifePoints);
 
 
-        CheckIfPlayerLose();
+        if (CheckIfPlayerLose()) {
+            return;
+        }
+
         if (player == player1)
         {
             SetTurn(player2);
@@ -79,6 +85,8 @@ public class GameController : MonoBehaviour
         {
             SetTurn(player1);
         }
+
+
 
     }
 
@@ -185,7 +193,7 @@ public class GameController : MonoBehaviour
         return 0;
     }
 
-// Buscar optimización
+// Buscar optimizaciï¿½n
     public DamageInput CheckForDamage(CardSlot cardSlot, int row, int col)
     {
         CardSlot cardObjetiveSlot;
@@ -313,21 +321,37 @@ public class GameController : MonoBehaviour
     }
 
 
-    public void CheckIfPlayerLose() {
+    public bool CheckIfPlayerLose() {
         if(player1.lifePoints <= 0)
         {
-            PlayerLose(panelEndMatch, "Jugador 2 Gana");
+            PlayerLose(panelInfoMatch, "Jugador 2 Gana");
+            return true;
         }
 
         if (player2.lifePoints <= 0)
         {
-            PlayerLose(panelEndMatch, "Jugador 1 Gana");
+            PlayerLose(panelInfoMatch, "Jugador 1 Gana");
+            return true;
         }
+        return false;
         }
 
     private void PlayerLose(GameObject panel, string text)
     {
         panel.SetActive(true);
-        textMatchEnding.text =  text;
+        textInfoMatch.text =  text;
+    }
+
+    IEnumerator ShowNextTurn(string text)
+    {
+        panelInfoMatch.SetActive(true);
+        textInfoMatch.text = text;
+
+
+
+        yield return new WaitForSeconds(1);
+
+        panelInfoMatch.SetActive(false);
+
     }
 }
