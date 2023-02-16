@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4046490218778492821}
   - component: {fileID: 3966476913457840442}
   - component: {fileID: 9204028609222485310}
+  - component: {fileID: 7660365555989458513}
   m_Layer: 5
   m_Name: CardSlot
   m_TagString: Untagged
@@ -72,7 +73,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8cb8a63c2a5ba7948bad70ca09887bd2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -94,15 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f55271a01f9864ab677c45ae664d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInSlot: {fileID: 0}
-  player: {fileID: 0}
   imageCard: {fileID: 4046490218778492821}
-  AttackPower: 0
-  level: 1
   arrowManager: {fileID: 9204028609222485310}
   boardController: {fileID: 0}
-  row: 0
-  col: 0
+  animator: {fileID: 7660365555989458513}
+  cardBack: {fileID: 21300000, guid: 8cb8a63c2a5ba7948bad70ca09887bd2, type: 3}
   endTurn:
     m_PersistentCalls:
       m_Calls:
@@ -134,6 +131,26 @@ MonoBehaviour:
   arrowDown: {fileID: 3698936334897165699}
   arrowLeft: {fileID: 4087691596233766364}
   arrowRight: {fileID: 3030973475294805532}
+--- !u!95 &7660365555989458513
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046490218778492823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3148cca301c078b4da914d0798f070ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &2554855807376538774
 PrefabInstance:
   m_ObjectHideFlags: 0
